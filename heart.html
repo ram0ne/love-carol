@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corações Caindo</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #111;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: fixed;
+            top: -50px;
+            color: red;
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerText = '❤️';
+
+        // Posição horizontal aleatória
+        heart.style.left = Math.random() * 100 + 'vw';
+
+        // Tamanhos variados
+        heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+
+        // Duração da animação
+        const duration = Math.random() * 3 + 2; // entre 2 e 5 segundos
+        heart.style.animationDuration = duration + 's';
+
+        document.body.appendChild(heart);
+
+        // Remover o coração após a animação
+        setTimeout(() => {
+            heart.remove();
+        }, duration * 1000);
+    }
+
+    // Criar corações a cada 200 milissegundos
+    setInterval(createHeart, 200);
+</script>
+
+</body>
+</html>
