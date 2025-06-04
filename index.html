@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/contador.css">
+   <title>Pedido Especial</title>
+   <style>
+      body {
+          background-color: #330033;
+          color: #333;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin-top: 100px;
+         
+      }
+
+      h1 {
+          color: #ff4d6d;
+      }
+	  
+	  h2 {
+		 color: #ff4d6d;
+	  }
+	  
+	  h3 {
+		 color: #ff4d6d;
+	  }
+	  
+	  	  h4 {
+		 color: #ff4d6d;
+	  }
+	  
+      button {
+          padding: 10px 20px;
+          margin: 10px;
+          border: none;
+          border-radius: 5px;
+          background-color: #ff4d6d;
+          color: white;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+
+      button:hover {
+          background-color: #ff1f4d;
+      }
+
+      /* ==========================
+         Corações Caindo - INÍCIO
+      ========================== */
+      .heart {
+          position: fixed;
+          top: -50px;
+          color: red;
+          font-size: 20px;
+          user-select: none;
+          pointer-events: none;
+          animation: fall linear forwards;
+      }
+
+      @keyframes fall {
+          to {
+              transform: translateY(100vh) rotate(360deg);
+              opacity: 0;
+          }
+      }
+      /* ==========================
+         Corações Caindo - FIM
+      ========================== */
+	  
+/* ==== SLIDER ==== */
+.slider {
+    width: 600px;
+    height: 400px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+    display: flex;
+    width: calc(600px * 5); /* 5 imagens */
+    animation: slide 20s infinite;
+}
+
+.slides img {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Animação do slide */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    16% { transform: translateX(0); }
+
+    20% { transform: translateX(-600px); }
+    36% { transform: translateX(-600px); }
+
+    40% { transform: translateX(-1200px); }
+    56% { transform: translateX(-1200px); }
+
+    60% { transform: translateX(-1800px); }
+    76% { transform: translateX(-1800px); }
+
+    80% { transform: translateX(-2400px); }
+    96% { transform: translateX(-2400px); }
+
+    100% { transform: translateX(0); }
+}
+
+.container-centralizado {
+    display: flex;
+    flex-direction: column; /* Um item em cima do outro */
+    align-items: center;     /* Centraliza horizontalmente */
+    gap: 10px;               /* Espaçamento entre os itens */
+}
+
+/* Moldura rosa */
+.moldura-rosa {
+    border: 2px solid #ff4d6d;
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: inline-block;
+    color: #fff;
+    background-color: #121212;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+   </style>
+</head>
+<body>
+    <h1>MEU FURACÃO DE NINAAAAR 💖</h1>
+
+	<h2>Esse é o tempo até agora que você chegou e me mudou 💖</h2>
+	<!-- CONTADOR DE TEMPO -->
+	<div id="contador-tempo"> </div>
+	
+	<script src="js/contador.js"></script>
+	
+	<!-- FIM CONTADOR -->
+	
+	<!-- MUSICA -->
+	<div class="container-centralizado">
+   <audio controls src="audio/furacao.mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+   
+<!-- texto -->
+<div class="moldura-rosa">
+	<h2> LEIA COM ATENÇÃO 😍: </h2>
+    Falar uma coisa aqui.. Esses sonhos, parecem difícil né, são mesmo afinal dinheiro etc, mas como eu já mencionei VOCÊ ATIVOU ALGUMA COISA EM MIM já de antes que tem me ajudado muito a ficar bem, me sinto bem determinado, acho que sei lá sabe quando vc tá desistindo de tudo aí vem alguém e te alavanca de volta, então você imagina se você faz isso com minha vida normal atual, imagina almejar algo que é com você e pra você, a meta é clara vencer e lançar e um sorriso nesse rosto lindo seu, e te encher de carinho, acredito que a luta seja até satisfatória se for 🤍🤍🤍🤍🤍
+</div>
+</div>
+
+
+    <!-- ==========================
+         Corações Caindo - INÍCIO
+    ========================== -->
+    <script>
+           function createFallingItem() {
+        const item = document.createElement('div');
+        item.classList.add('heart');
+
+        // Lista de itens que podem cair (corações e palavras)
+        const items = ['❤️', '💖', '😍', 'Maravilhosa', 'Amor', 'Linda', 'Fofinha', 'Perfeita', '💘', 'Meu furacão de ninar'];
+
+        // Escolher aleatoriamente um item da lista
+        item.innerText = items[Math.floor(Math.random() * items.length)];
+
+        // Posição horizontal aleatória
+        item.style.left = Math.random() * 100 + 'vw';
+
+        // Tamanho aleatório
+        item.style.fontSize = (Math.random() * 20 + 15) + 'px';
+
+        // Duração da animação (2 a 5 segundos)
+        const duration = Math.random() * 3 + 2;
+        item.style.animationDuration = duration + 's';
+
+        document.body.appendChild(item);
+
+        // Remover após a animação
+        setTimeout(() => {
+            item.remove();
+        }, duration * 1000);
+    }
+
+    // Criar itens (corações e palavras) continuamente
+    setInterval(createFallingItem, 300);
+    </script>
+    <!-- ==========================
+         Corações Caindo - FIM
+    ========================== -->
+</body>
+</html>
+
+	
+   <!-- <button onclick="alert('Ebaaa! Te amo 💘')">SIM</button>
+    <button onclick="alert('Não tem opção de não 😆')">CLARO!</button> -->
