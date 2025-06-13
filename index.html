@@ -132,6 +132,24 @@
     font-size: 15px;
 }
 
+  .video-container {
+    max-width: 80%;
+    max-height: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
    </style>
 </head>
 <body>
@@ -150,7 +168,13 @@
    <audio controls src="furacao.mp3">
         Seu navegador não suporta o elemento de áudio.
     </audio>
-   
+
+<div class="video-container">
+  <video controls>
+    <source src="loveee.mp4" type="video/mp4">
+    Seu navegador não suporta a reprodução de vídeo.
+  </video>
+</div>
 <!-- texto -->
 <div class="moldura-rosa">
 	<h2> TA, VAMO LA 😍: </h2>
